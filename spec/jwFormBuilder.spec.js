@@ -1,10 +1,11 @@
 const jwFormBuilder = require('../dist/jwFormBuilder');
 
 const fieldJson = [
-  {type: 'text', name: 'textInput1'},
-  {type: 'select', name: 'selectTest'},
-  {type: 'password', name: 'userPassword'},
-  {type: 'email', name: 'userEmail'}
+  {type: 'text', id: 'textInput1', name: 'textInput1', placeholder: 'Enter text here'},
+  {type: 'select', id: 'selectTest', name: 'selectTest'},
+  {type: 'password', id: 'userPassword', name: 'userPassword', placeholder: 'Enter password'},
+  {type: 'email', id: 'userEmail', name: 'userEmail', placeholder: 'Enter email'},
+  {type: 'textarea', id: 'textarea', name: 'textarea', placeholder: 'Write a message here'}
 ];
 
 describe('jwFormBuilder', function() {
@@ -21,9 +22,9 @@ describe('jwFormBuilder', function() {
             ])).toEqual(`<form> <input type="text"/> <select></select> </form>`);
 
             expect(jwFormBuilder.createForm([
-              {type: 'text', name: 'textInput1'},
-              {type: 'select', name: 'selectTest'}
-            ])).toEqual(`<form> <input type="text" name="textInput1"/> <select name="selectTest"></select> </form>`);
+              {type: 'text', id: 'textInput1', name: 'textInput1', placeholder: 'Enter text here'},
+              {type: 'select', id: 'selectTest', name: 'selectTest'}
+            ])).toEqual(`<form> <input type="text" id="textInput1" name="textInput1" placeholder="Enter text here"/> <select id="selectTest" name="selectTest"></select> </form>`);
 
         });
     });
