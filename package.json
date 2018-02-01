@@ -1,0 +1,31 @@
+{
+  "name": "jwformbuilder",
+  "version": "0.1.2",
+  "description": "Nodejs form creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node ./spec --autotest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjweber/jwFormBuilder.git"
+  },
+  "keywords": [
+    "jwformbuilder"
+  ],
+  "author": "Justin Weber <jjweber@student.fullsail.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjweber/jwFormBuilder/issues"
+  },
+  "homepage": "https://github.com/jjweber/jwFormBuilder#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "jasmine": "^2.5.2",
+    "jasmine-node": "^1.14.5"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
