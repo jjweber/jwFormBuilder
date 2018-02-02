@@ -3,6 +3,7 @@
 function createForm(formFields = []) {
   let form = "<form>";
 
+  //iterate through all form fields in JSON and create accompanying HTML
   formFields.forEach((field, index) => {
     form += getHtmlForField(field);
   });
@@ -16,12 +17,14 @@ function createForm(formFields = []) {
 function getHtmlForField(field) {
   let fieldHtml = "";
 
+  
+  //generate unique HTML for each input type
   switch(field.type) {
      case "text": {
 
-        fieldHtml = ` <input type="text"`;
+        fieldHtml = ' <input type="text"';
 
-        if (field.name) fieldHtml += ` name="${field.name}"`;
+        if (field.name) fieldHtml += ' name="${field.name}"';
 
         fieldHtml += '/>';
 
@@ -29,16 +32,16 @@ function getHtmlForField(field) {
      }
      case "select": {
 
-        fieldHtml = ` <select`;
+        fieldHtml = ' <select';
 
-        if (field.name) fieldHtml += ` name="${field.name}"`;
+        if (field.name) fieldHtml += ' name="${field.name}"';
 
-        fieldHtml += `></select> `;
+        fieldHtml += '></select> ';
 
         break;
      }
      default: {
-        fieldHtml = ` `;
+        fieldHtml = ' ';
         break;
      }
   }
