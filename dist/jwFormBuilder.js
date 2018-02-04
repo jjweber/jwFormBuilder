@@ -1,53 +1,55 @@
 "use strict";
 
 function createForm(formFields = []) {
-   let form = "<form>";
+  let form = "<form>";
 
-   formFields.forEach((field, index) => {
-      form += getHtmlForField(field);
-   });
+  //iterate through all form fields in JSON and create accompanying HTML
+  formFields.forEach((field, index) => {
+    form += getHtmlForField(field);
+  });
 
-   form += "</form>";
+  form += "</form>";
 
-   return form;
+  return form;
 }
 
 function getHtmlForField(field) {
-   let fieldHtml = "";
+  let fieldHtml = "";
 
-   switch (field.type) {
-      case "text":
-         {
+  //generate unique HTML for each input type
+  switch (field.type) {
+    case "text":
+      {
 
-            fieldHtml = ` <input type="text"`;
+        fieldHtml = ' <input type="text"';
 
-            if (field.name) fieldHtml += ` name="${field.name}"`;
+        if (field.name) fieldHtml += ' name="${field.name}"';
 
-            fieldHtml += '/>';
+        fieldHtml += '/>';
 
-            break;
-         }
-      case "select":
-         {
+        break;
+      }
+    case "select":
+      {
 
-            fieldHtml = ` <select`;
+        fieldHtml = ' <select';
 
-            if (field.name) fieldHtml += ` name="${field.name}"`;
+        if (field.name) fieldHtml += ' name="${field.name}"';
 
-            fieldHtml += `></select> `;
+        fieldHtml += '></select> ';
 
-            break;
-         }
-      default:
-         {
-            fieldHtml = ` `;
-            break;
-         }
-   }
+        break;
+      }
+    default:
+      {
+        fieldHtml = ' ';
+        break;
+      }
+  }
 
-   return fieldHtml;
+  return fieldHtml;
 }
 
 module.exports = {
-   createForm: createForm
+  createForm: createForm
 };
